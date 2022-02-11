@@ -31,8 +31,15 @@ function ProdukInfo(props) {
 				memiliki warna hitam dan putih yang tentu saja bisa dipakai oleh
 				anak-anak sekolah.
 			</p>
+			<a onClick={TambahCart} href="#">
+				Add to Cart
+			</a>
 		</div>
 	);
+}
+
+function TambahCart() {
+	return alert("Membeli Product");
 }
 
 export default App;
