@@ -2,21 +2,27 @@ import React from "react";
 import "./App.css";
 
 function App() {
-	return <div className="Parentbox"></div>;
+	return (
+		<div className="Parentbox">
+			<FotoProduk />
+			<ProdukInfo category="LOCAL PRIDE SNEAKER SNEAKER" harga="8xx.xxx" />
+		</div>
+	);
 }
 
-const FotoProduk = () => {
-	<div className="Foto">
-		<img src="poison-street.jpg" alt="Foto Sepatu"></img>
-	</div>;
-};
+function FotoProduk() {
+	return (
+		<div className="Foto">
+			<img src="poison-street.jpg" alt="Foto Sepatu" />
+		</div>
+	);
+}
 
-function ProdukInfo() {
-	let category = "LOCAL PRIDE SNEAKER SNEAKER";
-	let harga = "8xx.xxx";
+function ProdukInfo(props) {
+	let { harga } = props;
 	return (
 		<div className="Deskripsi">
-			<p className="Cate">{category}</p>
+			<p className="Cate">{props.category}</p>
 			<h1 className="Title">Poison Street</h1>
 			<p className="Price">IDR {harga}</p>
 			<p className="Info">

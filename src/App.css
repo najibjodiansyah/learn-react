@@ -7,13 +7,14 @@
 
 .Foto {
 	float: left;
+	overflow: hidden;
 	width: 50%;
-	height: 550px;
+	height: 433px;
 	background-color: #e3e9ee;
 }
 
 .Foto img {
-	width: 100%;
+	width: 120%;
 }
 
 .Deskripsi {
