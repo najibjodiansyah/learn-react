@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	let category = "LOCAL PRIDE SNEAKER SNEAKER";
+	let harga = "8xx.xxx";
+	return (
+		<div class="Parentbox">
+			<div class="Foto">
+				<img src="poison-street.jpg"></img>
+			</div>
+			<div class="Deskripsi">
+				<p class="Cate">{category}</p>
+				<h1 class="Title">Poison Street</h1>
+				<p class="Price">IDR {harga}</p>
+				<p class="Info">
+					Menyita perhatian anak muda. Ini karena ada berbagai macam sneakers
+					yang bertali atau slip on. Menariknya lagi, merk satu ini juga
+					kebanyakan memiliki warna hitam dan putih yang tentu saja bisa dipakai
+					oleh anak-anak sekolah.
+				</p>
+			</div>
+		</div>
+	);
 }
 
 export default App;
