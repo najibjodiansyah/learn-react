@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import ReviewItems from "./components/reviews";
+import PropTypes from "prop-types";
 
 function App() {
 	return (
@@ -10,7 +11,7 @@ function App() {
 				name="Poison Street"
 				category="LOCAL PRIDE SNEAKER SNEAKER"
 				harga="8xx.xxx"
-				Discount="coming"
+				Discount="yes"
 			/>
 			<ReviewItems />
 		</div>
@@ -26,9 +27,9 @@ function FotoProduk() {
 }
 
 function CheckDiscount(props) {
-	const { Discount } = props;
+	const { Discount, disc } = props;
 	if (Discount === "yes") {
-		return <p>DISCOUNT 50 %</p>;
+		return <p>DISCOUNT {disc} %</p>;
 	} else if (Discount === "coming") {
 		return <p>DISCOUNT IS COMING</p>;
 	}
@@ -38,13 +39,13 @@ function CheckDiscount(props) {
 function ProdukInfo(props) {
 	const { harga, Discount } = props;
 	const benefits = ["Anti air", "Anti bau", "Nasionalis"];
-	const listBenefits = benefits.map((item) => <li>{item}</li>);
+	const listBenefits = benefits.map((item) => <li key={item}>{item}</li>);
 	return (
 		<div className="Deskripsi">
 			<p className="Cate">{props.category}</p>
 			<h1 className="Title">{props.name}</h1>
 			<p className="Price">IDR {harga}</p>
-			<CheckDiscount Discount={Discount} />
+			<CheckDiscount Discount={Discount} disc={50} />
 			<p className="Info">
 				Menyita perhatian anak muda. Ini karena ada berbagai macam sneakers yang
 				bertali atau slip on. Menariknya lagi, merk satu ini juga kebanyakan
@@ -62,5 +63,9 @@ function ProdukInfo(props) {
 function TambahCart(e) {
 	return alert(`Membeli Product ${e}`);
 }
+
+CheckDiscount.propTypes = {
+	disc: PropTypes.number.isRequired,
+};
 
 export default App;
