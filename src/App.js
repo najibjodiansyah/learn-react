@@ -34,7 +34,9 @@ function CheckDiscount(props) {
 }
 
 function ProdukInfo(props) {
-	let { harga, Discount } = props;
+	const { harga, Discount } = props;
+	const benefits = ["Anti air", "Anti bau", "Nasionalis"];
+	const listBenefits = benefits.map((item) => <li>{item}</li>);
 	return (
 		<div className="Deskripsi">
 			<p className="Cate">{props.category}</p>
@@ -47,6 +49,7 @@ function ProdukInfo(props) {
 				memiliki warna hitam dan putih yang tentu saja bisa dipakai oleh
 				anak-anak sekolah.
 			</p>
+			<ul>{listBenefits}</ul>
 			<a onClick={(e) => TambahCart(props.name, e)} href={props.category}>
 				Add to Cart
 			</a>
